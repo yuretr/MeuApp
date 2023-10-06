@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MeuApp</string>
+    <string name="meu_app">Meu App!</string>
+    <string name="digite_seu_nome">Digite seu nome</string>
+    <string name="enviar">Enviar</string>
+    <string name="ola_nome">Ola, seja bem vindo %1$s!</string>
+</resources>
