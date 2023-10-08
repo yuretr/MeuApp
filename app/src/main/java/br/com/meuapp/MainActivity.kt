@@ -1,5 +1,6 @@
 package br.com.meuapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         val tvResultado = findViewById<TextView>(R.id.tvResultado)
         val etNome = findViewById<TextView>(R.id.etNome)
         val btEnviar = findViewById<Button>(R.id.btEnviar)
+        val btEnviar2 = findViewById<Button>(R.id.btEnviar2)
 //
 //      O aplicativo mostra o nome inserido pelo usuário junto a mensagem de recepcão "Ola, seja bem vindo".
 //      Está disponível em nos idiomas Português-br e Inglês.
@@ -27,6 +29,20 @@ class MainActivity : AppCompatActivity() {
             } else {
                 etNome.error = getString(R.string.digite_seu_nome)
 //              aqui deixamos uma condição, caso não seja digitado nenhum nome aparece a mensagem "Digite seu nome"
+            }
+        }
+
+        btEnviar2.setOnClickListener {
+            if (etNome.text.isNotBlank()) {
+                val nomeDigitado = etNome.text.toString()
+                val intent = Intent(this, ResultActivity::class.java)
+
+                intent.putExtra("NOME_DIGITADO", nomeDigitado)
+//              intent.putextra passa a informação para a outra tela
+
+                startActivity(intent)
+            } else {
+                etNome.error = getString(R.string.digite_seu_nome)
             }
         }
     }
