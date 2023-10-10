@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 
 class SendResultActivity : AppCompatActivity() {
@@ -17,25 +18,11 @@ class SendResultActivity : AppCompatActivity() {
 //      ctrl + D, duplica a linha abaixo
 
         btYes.setOnClickListener {
-            val intent = Intent()
-
-            intent.putExtra("RESULT", getString(R.string.sim))
-
-            setResult(Activity.RESULT_OK, intent)
-//          aqui recebe a informação de sim
-
-            finish()
+            sendResult(R.string.sim)
         }
 
         btNo.setOnClickListener {
-            val intent = Intent()
-
-            intent.putExtra("RESULT", getString(R.string.n_o))
-
-            setResult(Activity.RESULT_OK, intent)
-//          aqui recebe a informação de não
-
-            finish()
+            sendResult(R.string.n_o)
         }
 
         btCancel.setOnClickListener {
@@ -44,5 +31,17 @@ class SendResultActivity : AppCompatActivity() {
 
             finish()
         }
+    }
+
+    private fun sendResult(@StringRes stringResId: Int) {
+//          @StringRes faz com que a informação não seja qualquer inteiro, e sim uma string
+        val intent = Intent()
+
+        intent.putExtra("RESULT", getString(stringResId))
+
+        setResult(RESULT_OK, intent)
+        //          aqui recebe a informação de sim
+
+        finish()
     }
 }
