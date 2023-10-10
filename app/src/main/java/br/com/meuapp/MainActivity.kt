@@ -68,11 +68,13 @@ class MainActivity : AppCompatActivity() {
 
         if (requestCode == 1) {
             if (resultCode == Activity.RESULT_OK && data != null) {
-                val result = data.getStringExtra("RESULT")
 //            data é null, se for diferente de null entra no código (!=)
+                val result = data.getStringExtra("RESULT")
 
                 val tvResultado = findViewById<TextView>(R.id.tvResultado)
                 tvResultado.text = getString(R.string.informa_o_recebida_1s, result)
+
+
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 val tvResultado = findViewById<TextView>(R.id.tvResultado)
                 tvResultado.text = getString(R.string.tela_foi_cancelada)

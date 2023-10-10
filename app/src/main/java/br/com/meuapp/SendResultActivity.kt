@@ -39,7 +39,7 @@ class SendResultActivity : AppCompatActivity() {
 
         intent.putExtra("RESULT", getString(stringResId))
 
-        setResult(RESULT_OK, intent)
+        setResult(Activity.RESULT_OK, intent)
         //          aqui recebe a informação de sim
 
         finish()
