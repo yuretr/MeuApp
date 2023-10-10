@@ -16,4 +16,10 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="enviar_para_tela_resultado">Send to Result screen</string>
+    <string name="abrir_tela_para_receber_resultado">Open screen to receive Result</string>
+    <string name="n_o">No</string>
+    <string name="sim">Yes</string>
+    <string name="cancelar">Cancel</string>
+    <string name="tela_foi_cancelada">Screen has been canceled</string>
+    <string name="informa_o_recebida_1s">Data received: %1$s</string>
 </resources>

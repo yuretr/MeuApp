@@ -1,10 +1,11 @@
 package br.com.meuapp
 
+import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         val etNome = findViewById<TextView>(R.id.etNome)
         val btEnviar = findViewById<Button>(R.id.btEnviar)
         val btEnviar2 = findViewById<Button>(R.id.btEnviar2)
+        val btEnviar3 = findViewById<Button>(R.id.btEnviar3)
 //
 //      O aplicativo mostra o nome inserido pelo usuário junto a mensagem de recepcão "Ola, seja bem vindo".
 //      Está disponível em nos idiomas Português-br e Inglês.
@@ -43,6 +45,37 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             } else {
                 etNome.error = getString(R.string.digite_seu_nome)
+            }
+        }
+
+        btEnviar3.setOnClickListener {
+
+            val intent = Intent(this, SendResultActivity::class.java)
+
+            val requestCode = 1
+
+            startActivityForResult(intent, requestCode)
+
+            startActivity(intent)
+
+//          CTRL + ALT + L = Ajusta formatação do código
+
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 1) {
+            if (resultCode == Activity.RESULT_OK && data != null) {
+                val result = data.getStringExtra("RESULT")
+//            data é null, se for diferente de null entra no código (!=)
+
+                val tvResultado = findViewById<TextView>(R.id.tvResultado)
+                tvResultado.text = getString(R.string.informa_o_recebida_1s, result)
+            } else if (resultCode == Activity.RESULT_CANCELED) {
+                val tvResultado = findViewById<TextView>(R.id.tvResultado)
+                tvResultado.text = getString(R.string.tela_foi_cancelada)
             }
         }
     }

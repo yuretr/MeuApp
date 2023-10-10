@@ -53,11 +53,25 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="#4C03C2"
+        android:backgroundTint="#0369C2"
         android:text="@string/enviar_para_tela_resultado"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btEnviar" />
+
+    <Button
+        android:id="@+id/btEnviar3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#3B91A6"
+        android:text="@string/abrir_tela_para_receber_resultado"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btEnviar2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
