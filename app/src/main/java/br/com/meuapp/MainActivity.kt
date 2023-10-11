@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -52,9 +53,10 @@ class MainActivity : AppCompatActivity() {
 
             val intent = Intent(this, SendResultActivity::class.java)
 
-            val requestCode = 1
+//            val requestCode = 1
 
-            startActivityForResult(intent, requestCode)
+            getResult.launch(intent)
+//            startActivityForResult(intent, requestCode)
 
             startActivity(intent)
 
@@ -63,22 +65,39 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == 1) {
-            if (resultCode == Activity.RESULT_OK && data != null) {
-//            data é null, se for diferente de null entra no código (!=)
-                val result = data.getStringExtra("RESULT")
+    private val getResult =
+        registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) {
 
+            if (it.resultCode == Activity.RESULT_OK) {
+                val result = it.data?.getStringExtra("RESULT")
                 val tvResultado = findViewById<TextView>(R.id.tvResultado)
                 tvResultado.text = getString(R.string.informa_o_recebida_1s, result)
 
-
-            } else if (resultCode == Activity.RESULT_CANCELED) {
+            } else if (it.resultCode == Activity.RESULT_CANCELED) {
                 val tvResultado = findViewById<TextView>(R.id.tvResultado)
                 tvResultado.text = getString(R.string.tela_foi_cancelada)
             }
         }
-    }
+
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//
+//        if (requestCode == 1) {
+//            if (resultCode == Activity.RESULT_OK && data != null) {
+////            data é null, se for diferente de null entra no código (!=)
+//                val result = data.getStringExtra("RESULT")
+//
+//                val tvResultado = findViewById<TextView>(R.id.tvResultado)
+//                tvResultado.text = getString(R.string.informa_o_recebida_1s, result)
+//
+//
+//            } else if (resultCode == Activity.RESULT_CANCELED) {
+//                val tvResultado = findViewById<TextView>(R.id.tvResultado)
+//                tvResultado.text = getString(R.string.tela_foi_cancelada)
+//            }
+//        }
+//    }
 }

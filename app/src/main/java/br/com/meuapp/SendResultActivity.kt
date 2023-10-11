@@ -33,6 +33,7 @@ class SendResultActivity : AppCompatActivity() {
         }
     }
 
+
     private fun sendResult(@StringRes stringResId: Int) {
 //          @StringRes faz com que a informação não seja qualquer inteiro, e sim uma string
         val intent = Intent()
@@ -40,7 +41,7 @@ class SendResultActivity : AppCompatActivity() {
         intent.putExtra("RESULT", getString(stringResId))
 
         setResult(Activity.RESULT_OK, intent)
-        //          aqui recebe a informação de sim
+        //          aqui recebe a informação de sim ou não
 
         finish()
     }
