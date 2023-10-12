@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             getResult.launch(intent)
 //            startActivityForResult(intent, requestCode)
 
-            startActivity(intent)
+//            startActivity(intent)
 
 //          CTRL + ALT + L = Ajusta formatação do código
 
