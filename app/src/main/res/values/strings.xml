@@ -1,25 +1,25 @@
 <resources>
     <string name="app_name">MeuApp</string>
-    <string name="meu_app">Meu App!</string>
-    <string name="digite_seu_nome">Digite seu nome</string>
-    <string name="enviar">Enviar</string>
-    <string name="ola_nome">Ola, seja bem vindo %1$s!</string>
+    <string name="meu_app">My App!</string>
+    <string name="digite_seu_nome">Type your name</string>
+    <string name="enviar">Send</string>
+    <string name="ola_nome">Hello, welcome %1$s!</string>
     <string name="title_activity_drawer">DrawerActivity</string>
-    <string name="navigation_drawer_open">Abrir gaveta de navegação</string>
-    <string name="navigation_drawer_close">Fechar gaveta de navegação</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Configurações</string>
-
-    <string name="menu_home">Início</string>
-    <string name="menu_gallery">Galeria</string>
-    <string name="menu_slideshow">Slides</string>
-    <string name="enviar_para_tela_resultado">Enviar para tela Resultado</string>
-    <string name="abrir_tela_para_receber_resultado">Abrir tela para receber Resultado</string>
-    <string name="n_o">Não</string>
-    <string name="sim">Sim</string>
-    <string name="cancelar">Cancelar</string>
-    <string name="tela_foi_cancelada">Tela foi cancelada</string>
-    <string name="informa_o_recebida_1s">Informação recebida: %1$s</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="enviar_para_tela_resultado">Send to Result screen</string>
+    <string name="abrir_tela_para_receber_resultado">Open screen to receive Result</string>
+    <string name="n_o">No</string>
+    <string name="sim">Yes</string>
+    <string name="cancelar">Cancel</string>
+    <string name="tela_foi_cancelada">Screen has been canceled</string>
+    <string name="informa_o_recebida_1s">Data received: %1$s</string>
+    <string name="question">Did you like the app?</string>
 </resources>
