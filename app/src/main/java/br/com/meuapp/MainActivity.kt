@@ -18,10 +18,8 @@ class MainActivity : AppCompatActivity() {
         val btEnviar = findViewById<Button>(R.id.btEnviar)
         val btEnviar2 = findViewById<Button>(R.id.btEnviar2)
         val btEnviar3 = findViewById<Button>(R.id.btEnviar3)
-//
-//      O aplicativo mostra o nome inserido pelo usuário junto a mensagem de recepcão "Ola, seja bem vindo".
-//      Está disponível em nos idiomas Português-br e Inglês.
-//
+
+
         btEnviar.setOnClickListener {
             if (etNome.text.isNotBlank()) {
 //          isNotBlack() verifica se não está em branco, ou somente com espaços, se tiver o nome ele segue o código
@@ -53,14 +51,7 @@ class MainActivity : AppCompatActivity() {
 
             val intent = Intent(this, SendResultActivity::class.java)
 
-//            val requestCode = 1
-
             getResult.launch(intent)
-//            startActivityForResult(intent, requestCode)
-
-//            startActivity(intent)
-
-//          CTRL + ALT + L = Ajusta formatação do código
 
         }
     }
@@ -81,23 +72,5 @@ class MainActivity : AppCompatActivity() {
                 tvResultado.text = getString(R.string.tela_foi_cancelada)
             }
         }
-
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//
-//        if (requestCode == 1) {
-//            if (resultCode == Activity.RESULT_OK && data != null) {
-////            data é null, se for diferente de null entra no código (!=)
-//                val result = data.getStringExtra("RESULT")
-//
-//                val tvResultado = findViewById<TextView>(R.id.tvResultado)
-//                tvResultado.text = getString(R.string.informa_o_recebida_1s, result)
-//
-//
-//            } else if (resultCode == Activity.RESULT_CANCELED) {
-//                val tvResultado = findViewById<TextView>(R.id.tvResultado)
-//                tvResultado.text = getString(R.string.tela_foi_cancelada)
-//            }
-//        }
-//    }
+//          CTRL + ALT + L = Ajusta formatação do código
 }

@@ -28,6 +28,7 @@ class SendResultActivity : AppCompatActivity() {
         btCancel.setOnClickListener {
 
             setResult(Activity.RESULT_CANCELED)
+            //          aqui recebe a informação de cancelado
 
             finish()
         }
@@ -35,7 +36,7 @@ class SendResultActivity : AppCompatActivity() {
 
 
     private fun sendResult(@StringRes stringResId: Int) {
-//          @StringRes faz com que a informação não seja qualquer inteiro, e sim uma string
+        //          @StringRes faz com que a informação não seja qualquer inteiro, e sim uma string
         val intent = Intent()
 
         intent.putExtra("RESULT", getString(stringResId))
